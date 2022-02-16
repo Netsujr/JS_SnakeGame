@@ -16,7 +16,7 @@ function getRandomColor() {
 
 
 // add and remove randomColor every 5 seconds with transition
-setInterval(function() {
+setInterval(function () {
   gameBoard.style.backgroundColor = getRandomColor();
 }, 5000);
 
@@ -26,8 +26,12 @@ let gameOver = false;
 
 function main(currentTime) {
   if (gameOver) {
-    return alert('Game Over');
+    if (confirm('Game Over! Play again?')) {
+      window.location.reload();
+    }
+    return;
   }
+
   window.requestAnimationFrame(main);
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
   if (secondsSinceLastRender < 1 / SNAKE_SPEED) return;
@@ -53,4 +57,5 @@ function draw() {
 }
 
 function checkCollisions() {
-  gameOver = outsideGrid(getSnakeHead())|| snakeIntersectsSnake();}
+  gameOver = outsideGrid(getSnakeHead()) || snakeIntersectsSnake();
+}
