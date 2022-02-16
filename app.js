@@ -1,4 +1,4 @@
-import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './snake.js';
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './Javasricpt/snake.js';
 const gameBoard = document.querySelector('#game-board');
 
 function getRandomColor() {
