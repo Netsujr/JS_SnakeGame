@@ -1,3 +1,6 @@
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './snake.js';
+const gameBoard = document.querySelector('#game-board');
+
 function getRandomColor() {
   let letters = '0123456789ABCDEF';
   let color = '#';
@@ -7,7 +10,6 @@ function getRandomColor() {
   return color;
 }
 
-gameBoard = document.querySelector('#game-board');
 
 // add and remove randomColor every 5 seconds with transition
 setInterval(function() {
@@ -16,7 +18,6 @@ setInterval(function() {
 
 // __________________________________________________________
 let lastRenderTime = 0;
-const SNAKE_SPEED = 2;
 
 function main(currentTime) {
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
@@ -30,3 +31,11 @@ function main(currentTime) {
 }
 
 window.requestAnimationFrame(main);
+
+function update() {
+  updateSnake();
+}
+
+function draw() {
+  drawSnake(gameBoard);
+}
