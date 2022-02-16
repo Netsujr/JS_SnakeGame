@@ -1,4 +1,5 @@
-import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './Javasricpt/snake.js';
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './Javascript/snake.js';
+import { update as updateFood, draw as drawFood } from './Javascript/food.js';
 const gameBoard = document.querySelector('#game-board');
 
 function getRandomColor() {
@@ -34,9 +35,11 @@ window.requestAnimationFrame(main);
 
 function update() {
   updateSnake();
+  updateFood();
 }
 
 function draw() {
   gameBoard.innerHTML = '';
   drawSnake(gameBoard);
+  drawFood(gameBoard);
 }
