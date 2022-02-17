@@ -29,3 +29,9 @@ body {
   border: .25vmin solid black;
   border-radius: 15px;
 }
+
+.newFood {
+  background-color: #a9deff;
+  border: .25vmin solid black;
+  border-radius: 15px;
+}

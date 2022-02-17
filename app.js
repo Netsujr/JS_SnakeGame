@@ -3,7 +3,6 @@ import { update as updateFood, draw as drawFood } from './Javascript/food.js';
 import { getSnakeHead } from './Javascript/snake.js';
 import { outsideGrid } from './Javascript/grid.js';
 import { snakeIntersectsSnake } from './Javascript/snake.js';
-import { incrementSpeed } from './Javascript/snake.js';
 const gameBoard = document.querySelector('#game-board');
 
 function getRandomColor() {

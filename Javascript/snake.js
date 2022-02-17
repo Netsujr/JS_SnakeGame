@@ -59,7 +59,10 @@ export function getSnakeHead() {
   return snakeBody[0];
 }
 
-// increment snake speed as snake eats more food
-export function incrementSpeed() {
+function incrementSpeed() {
   SNAKE_SPEED++;
+}
+
+function decrementSpeed() {
+  SNAKE_SPEED--;
 }
