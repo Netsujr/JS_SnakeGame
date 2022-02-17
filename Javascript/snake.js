@@ -1,6 +1,6 @@
 import { getInputDirection } from "./input.js";
 
-export const SNAKE_SPEED = 3;
+export let SNAKE_SPEED = 3;
 let newSegments = 0;
 const snakeBody = [{ x: 11, y: 11 }];
 
