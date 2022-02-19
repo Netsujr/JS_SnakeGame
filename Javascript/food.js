@@ -1,4 +1,4 @@
-import { onSnake, expandSnake } from "./snake.js";
+import { onSnake, expandSnake, incrementSpeed } from "./snake.js";
 import { randomGridPosition } from "./grid.js";
 
 let food = getRandomFoodPosition();
@@ -16,22 +16,18 @@ export function update() {
 
 export function draw(gameBoard) {
   const foodElement = document.createElement('div');
-  const SecondFood = document.createElement('div');
-  // let random = Math.floor(Math.random() * 5) + 1;
   foodElement.style.gridRowStart = food.y;
   foodElement.style.gridColumnStart = food.x;
   foodElement.classList.add('food');
   gameBoard.appendChild(foodElement);
-  //append second food to game board every so often
-  // SecondFood.style.gridRowStart = food.y + random;
-  // SecondFood.style.gridColumnStart = food.x + random;
-  // SecondFood.classList.add('newFood');
-  // random number from 1 to 5
-  // if (random == 5) {
-  //   setInterval(function () {
-  //     gameBoard.appendChild(SecondFood);
-  //   }, 3000);
-  // }
+};
+
+export function draw2(gameBoard) {
+  const foodElement = document.createElement('div');
+  foodElement.style.gridRowStart = food.y;
+  foodElement.style.gridColumnStart = food.x;
+  foodElement.classList.add('foodTwo');
+  gameBoard.appendChild(foodElement);
 };
 
 

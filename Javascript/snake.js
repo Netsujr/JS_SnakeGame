@@ -30,7 +30,6 @@ export function draw(gameBoard) {
 
 export function expandSnake(amount) {
   newSegments += amount;
-  incrementSpeed();
 }
 
 export function onSnake(position, { ignoreHead = false } = {}) {
@@ -59,10 +58,10 @@ export function getSnakeHead() {
   return snakeBody[0];
 }
 
-function incrementSpeed() {
+export function incrementSpeed() {
   SNAKE_SPEED++;
 }
 
-function decrementSpeed() {
+export function decrementSpeed() {
   SNAKE_SPEED--;
 }
