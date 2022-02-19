@@ -39,7 +39,11 @@ function main(currentTime) {
   console.log(SNAKE_SPEED);
 
   update();
-  draw();
+
+  {
+    // run draw function only once
+    draw();
+  }
 }
 
 window.requestAnimationFrame(main);
@@ -55,13 +59,12 @@ function draw() {
   gameBoard.innerHTML = '';
   drawSnake(gameBoard);
 
-  switch (random) {
-    case random >= 4:
-      drawFood(gameBoard);
-      break;
-    case random == 5:
-      drawFood2(gameBoard);
-      break;
+  if (random <= 4) {
+    return drawFood(gameBoard);
+  }
+
+  if (random == 5) {
+    return drawFood2(gameBoard);
   }
 }
 
