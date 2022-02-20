@@ -30,6 +30,7 @@ export function draw(gameBoard) {
 
 export function expandSnake(amount) {
   newSegments += amount;
+  incrementSpeed();
 }
 
 export function onSnake(position, { ignoreHead = false } = {}) {

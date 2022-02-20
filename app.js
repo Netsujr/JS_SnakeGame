@@ -1,5 +1,5 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './Javascript/snake.js';
-import { update as updateFood, draw as drawFood, draw2 as drawFood2 } from './Javascript/food.js';
+import { update as updateFood, draw as drawFood } from './Javascript/food.js';
 import { getSnakeHead } from './Javascript/snake.js';
 import { outsideGrid } from './Javascript/grid.js';
 import { snakeIntersectsSnake } from './Javascript/snake.js';
@@ -14,8 +14,6 @@ function getRandomColor() {
   return color;
 }
 
-
-// add and remove randomColor every 5 seconds with transition
 setInterval(function () {
   gameBoard.style.backgroundColor = getRandomColor();
 }, 5000);
@@ -39,11 +37,7 @@ function main(currentTime) {
   console.log(SNAKE_SPEED);
 
   update();
-
-  {
-    // run draw function only once
-    draw();
-  }
+  draw();
 }
 
 window.requestAnimationFrame(main);
@@ -58,14 +52,7 @@ function draw() {
   let random = Math.floor(Math.random() * 5) + 1;
   gameBoard.innerHTML = '';
   drawSnake(gameBoard);
-
-  if (random <= 4) {
-    return drawFood(gameBoard);
-  }
-
-  if (random == 5) {
-    return drawFood2(gameBoard);
-  }
+  drawFood(gameBoard);
 }
 
 function checkCollisions() {
