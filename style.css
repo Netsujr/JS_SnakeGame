@@ -19,16 +19,24 @@ body {
   position: relative;
 }
 
+#game-board .score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .snake {
   background-color: #00ff00;
   border: .25vmin solid black;
   border-radius: 5px;
+  z-index: 2;
 }
 
 .food {
   background-color: #ff0000;
   border: .25vmin solid black;
   border-radius: 15px;
+  z-index: 2;
 }
 
 .foodTwo {
@@ -39,11 +47,10 @@ body {
 
 .score {
   color: #ececec;
-  font-size: 2rem;
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  top: 45%;
-  left: 45%;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 15rem;
+  position: fixed;
+  z-index: 1;
+  height: inherit;
+  width: inherit;
 }
