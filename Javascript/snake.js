@@ -40,7 +40,7 @@ export function onSnake(position, { ignoreHead = false } = {}) {
 
 export function drawScore(gameBoard) {
   const playerScore = document.createElement('div');
-  playerScore.innerHTML = `Score: ${snakeBody.length}`;
+  playerScore.innerHTML = `Score: ${SNAKE_SPEED - 3}`;
   playerScore.classList.add('score');
   gameBoard.appendChild(playerScore);
 }

@@ -16,6 +16,7 @@ body {
   border: 1px solid #ececec;
   grid-template-rows: repeat(21, 1fr);
   grid-template-columns: repeat(21, 1fr);
+  position: relative;
 }
 
 .snake {
@@ -39,5 +40,10 @@ body {
 .score {
   color: #ececec;
   font-size: 2rem;
-  z-index: 3;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 45%;
+  left: 45%;
 }
