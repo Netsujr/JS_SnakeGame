@@ -5,12 +5,10 @@ export let SNAKE_SPEED = 3;
 const snakeBody = [{ x: 11, y: 11 }];
 
 export function update() {
-  // console.log('update');
   addSegments();
   const inputDirection = getInputDirection();
   for (let i = snakeBody.length - 2; i >= 0; i--) {
     snakeBody[i + 1] = { ...snakeBody[i] };
-    // snakeBody[i]
   }
   snakeBody[0].x += inputDirection.x;
   snakeBody[0].y += inputDirection.y;
@@ -38,6 +36,13 @@ export function onSnake(position, { ignoreHead = false } = {}) {
     if (ignoreHead && index === 0) return false;
     return equalPositions(segment, position);
   });
+}
+
+export function drawScore(gameBoard) {
+  const playerScore = document.createElement('div');
+  playerScore.innerHTML = `Score: ${snakeBody.length}`;
+  playerScore.classList.add('score');
+  gameBoard.appendChild(playerScore);
 }
 
 export function snakeIntersectsSnake() {
