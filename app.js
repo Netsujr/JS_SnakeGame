@@ -1,5 +1,5 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, drawScore } from './Javascript/snake.js';
-import { update as updateFood, draw as drawFood } from './Javascript/food.js';
+import { update as updateFood, chooseFood as drawFood } from './Javascript/food.js';
 import { getSnakeHead } from './Javascript/snake.js';
 import { outsideGrid } from './Javascript/grid.js';
 import { snakeIntersectsSnake } from './Javascript/snake.js';
@@ -21,6 +21,7 @@ setInterval(function () {
 // __________________________________________________________
 let lastRenderTime = 0;
 let gameOver = false;
+
 
 function main(currentTime) {
   if (gameOver) {
@@ -49,11 +50,10 @@ function update() {
 }
 
 function draw() {
-  // let random = Math.floor(Math.random() * 5) + 1;
   gameBoard.innerHTML = '';
   drawSnake(gameBoard);
-  drawFood(gameBoard);
   drawScore(gameBoard);
+  drawFood(gameBoard);
 }
 
 function checkCollisions() {
