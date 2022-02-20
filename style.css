@@ -16,22 +16,41 @@ body {
   border: 1px solid #ececec;
   grid-template-rows: repeat(21, 1fr);
   grid-template-columns: repeat(21, 1fr);
+  position: relative;
+}
+
+#game-board .score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .snake {
   background-color: #00ff00;
   border: .25vmin solid black;
   border-radius: 5px;
+  z-index: 2;
 }
 
 .food {
   background-color: #ff0000;
   border: .25vmin solid black;
   border-radius: 15px;
+  z-index: 2;
 }
 
 .foodTwo {
   background-color: #a9deff;
   border: .25vmin solid black;
   border-radius: 15px;
+}
+
+.score {
+  color: #ececec;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 15rem;
+  position: fixed;
+  z-index: 1;
+  height: inherit;
+  width: inherit;
 }
