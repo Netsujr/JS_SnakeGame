@@ -9,10 +9,9 @@ const EXPANSION_RATE = 2;
 export function update() {
   if (onSnake(food)) {
     expandSnake(EXPANSION_RATE);
-    food = getRandomFoodPosition();
+    food = getRandomFoodPosition(chooseFood());
   }
 }
-
 
 function getRandomFoodPosition() {
   let newFoodPosition;
@@ -24,7 +23,7 @@ function getRandomFoodPosition() {
 
 export function chooseFood(gameBoard) {
   let foodType = Math.floor(Math.random() * 6);
-  console.log(foodType);
+  // console.log(foodType);
   if (foodType <= 4) {
     food1(gameBoard);
   } else {
@@ -32,12 +31,20 @@ export function chooseFood(gameBoard) {
   }
 }
 
+// function createFood(gameBoard) {
+//   let food = document.createElement("div");
+//   gameBoard.appendChild(food);
+// }
+
+
 function food1(gameBoard) {
   const foodElement = document.createElement('div');
   foodElement.style.gridRowStart = food.y;
   foodElement.style.gridColumnStart = food.x;
   foodElement.classList.add('food');
   gameBoard.appendChild(foodElement);
+  // stop code from running
+  return;
 };
 
 function food2(gameBoard) {
@@ -46,4 +53,5 @@ function food2(gameBoard) {
   foodElement.style.gridColumnStart = food.x;
   foodElement.classList.add('foodTwo');
   gameBoard.appendChild(foodElement);
+  return;
 };
