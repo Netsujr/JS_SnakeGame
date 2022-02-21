@@ -1,11 +1,11 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './Javascript/snake.js';
-
 import { drawScore } from './Javascript/score.js';
 import { update as updateFood, update2 as updateFood2, food1 as drawFood1, food2 as drawFood2 } from './Javascript/food.js';
 import { getSnakeHead } from './Javascript/snake.js';
 import { outsideGrid } from './Javascript/grid.js';
 import { snakeIntersectsSnake } from './Javascript/snake.js';
 const gameBoard = document.querySelector('#game-board');
+let playerScore = document.querySelector('.score');
 
 function getRandomColor() {
   let letters = '0123456789ABCDEF';
@@ -40,7 +40,7 @@ function main(currentTime) {
 
   update();
   draw();
-  console.log(SNAKE_SPEED);
+  // console.log(SNAKE_SPEED);
 }
 
 window.requestAnimationFrame(main);
@@ -53,11 +53,15 @@ function update() {
 }
 
 function draw() {
+  let playerScore2 = document.querySelector('.score');
   gameBoard.innerHTML = '';
   drawSnake(gameBoard);
   drawScore(gameBoard);
   drawFood1(gameBoard);
+  if (playerScore2.innerText % 3 == 0 && playerScore2.innerText != 0) {
   drawFood2(gameBoard);
+  }
+  console.log(playerScore2.innerText);
 }
 
 function checkCollisions() {
