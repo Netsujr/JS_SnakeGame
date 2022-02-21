@@ -36,13 +36,6 @@ export function onSnake(position, { ignoreHead = false } = {}) {
   });
 }
 
-export function drawScore(gameBoard) {
-  const playerScore = document.createElement('div');
-  playerScore.innerHTML = `<p>${SNAKE_SPEED - 3}</p>`;
-  playerScore.classList.add('score');
-  gameBoard.appendChild(playerScore);
-}
-
 export function snakeIntersectsSnake() {
   return onSnake(snakeBody[0], { ignoreHead: true });
 }

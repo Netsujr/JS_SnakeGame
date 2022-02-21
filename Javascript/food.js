@@ -9,7 +9,7 @@ const EXPANSION_RATE = 2;
 export function update() {
   if (onSnake(food)) {
     expandSnake(EXPANSION_RATE);
-    food = getRandomFoodPosition(chooseFood());
+    food = getRandomFoodPosition();
   }
 }
 

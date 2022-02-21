@@ -1,4 +1,5 @@
-import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, drawScore } from './Javascript/snake.js';
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './Javascript/snake.js';
+import { drawScore } from './Javascript/score.js';
 import { update as updateFood, chooseFood as drawFood } from './Javascript/food.js';
 import { getSnakeHead } from './Javascript/snake.js';
 import { outsideGrid } from './Javascript/grid.js';
@@ -35,7 +36,7 @@ function main(currentTime) {
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
   if (secondsSinceLastRender < 1 / SNAKE_SPEED) return;
   lastRenderTime = currentTime;
-  console.log(SNAKE_SPEED);
+  // console.log(SNAKE_SPEED);
 
   update();
   draw();
