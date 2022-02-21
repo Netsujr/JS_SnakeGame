@@ -43,6 +43,7 @@ body {
   background-color: #a9deff;
   border: .25vmin solid black;
   border-radius: 15px;
+  z-index: 2;
 }
 
 .score {

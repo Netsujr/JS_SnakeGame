@@ -2,7 +2,7 @@ import { getInputDirection } from "./input.js";
 
 let newSegments = 0;
 export let SNAKE_SPEED = 3;
-const snakeBody = [{ x: 11, y: 11 }];
+export const snakeBody = [{ x: 11, y: 11 }];
 
 export function update() {
   addSegments();
@@ -15,20 +15,23 @@ export function update() {
 }
 
 export function draw(gameBoard) {
-  // console.log('draw');
   snakeBody.forEach(segment => {
     const snakeElement = document.createElement('div');
     snakeElement.style.gridRowStart = segment.y;
     snakeElement.style.gridColumnStart = segment.x;
     snakeElement.classList.add('snake');
     gameBoard.appendChild(snakeElement);
-    // console.log(segment);
   });
 }
 
-export function expandSnake(amount) {
+export function expandSnakeAndSpeed(amount) {
   newSegments += amount;
   incrementSpeed();
+}
+
+export function expandSnakeNotSpeed(amount) {
+  newSegments += amount;
+  decrementSpeed();
 }
 
 export function onSnake(position, { ignoreHead = false } = {}) {
@@ -36,13 +39,6 @@ export function onSnake(position, { ignoreHead = false } = {}) {
     if (ignoreHead && index === 0) return false;
     return equalPositions(segment, position);
   });
-}
-
-export function drawScore(gameBoard) {
-  const playerScore = document.createElement('div');
-  playerScore.innerHTML = `<p>${SNAKE_SPEED - 3}</p>`;
-  playerScore.classList.add('score');
-  gameBoard.appendChild(playerScore);
 }
 
 export function snakeIntersectsSnake() {
