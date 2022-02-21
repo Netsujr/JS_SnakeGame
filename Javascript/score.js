@@ -1,8 +1,8 @@
-import { SNAKE_SPEED } from "./snake.js";
+import { snakeBody } from "./snake.js";
 
 export function drawScore(gameBoard) {
   const playerScore = document.createElement('div');
-  playerScore.innerHTML = `<p>${SNAKE_SPEED - 3}</p>`;
+  playerScore.innerHTML = `<p>${(snakeBody.length - 1) / 2}</p>`;
   playerScore.classList.add('score');
   gameBoard.appendChild(playerScore);
 }
