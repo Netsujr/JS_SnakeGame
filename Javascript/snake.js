@@ -24,9 +24,14 @@ export function draw(gameBoard) {
   });
 }
 
-export function expandSnake(amount) {
+export function expandSnakeAndSpeed(amount) {
   newSegments += amount;
   incrementSpeed();
+}
+
+export function expandSnakeNotSpeed(amount) {
+  newSegments += amount;
+  decrementSpeed();
 }
 
 export function onSnake(position, { ignoreHead = false } = {}) {
