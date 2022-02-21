@@ -13,6 +13,13 @@ export function update() {
   }
 }
 
+export function update2() {
+  if (onSnake(secondFood)) {
+  expandSnakeNotSpeed(EXPANSION_RATE);
+  secondFood = getRandomFoodPosition();
+  }
+}
+
 function getRandomFoodPosition() {
   let newFoodPosition;
   while (newFoodPosition == null || onSnake(newFoodPosition)) {

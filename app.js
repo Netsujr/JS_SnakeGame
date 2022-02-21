@@ -1,6 +1,7 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './Javascript/snake.js';
+
 import { drawScore } from './Javascript/score.js';
-import { update as updateFood, food1 as drawFood1, food2 as drawFood2 } from './Javascript/food.js';
+import { update as updateFood, update2 as updateFood2, food1 as drawFood1, food2 as drawFood2 } from './Javascript/food.js';
 import { getSnakeHead } from './Javascript/snake.js';
 import { outsideGrid } from './Javascript/grid.js';
 import { snakeIntersectsSnake } from './Javascript/snake.js';
@@ -39,6 +40,7 @@ function main(currentTime) {
 
   update();
   draw();
+  console.log(SNAKE_SPEED);
 }
 
 window.requestAnimationFrame(main);
@@ -46,6 +48,7 @@ window.requestAnimationFrame(main);
 function update() {
   updateSnake();
   updateFood();
+  updateFood2();
   checkCollisions();
 }
 
